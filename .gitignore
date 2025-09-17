@@ -1,0 +1,3 @@
+.venv/*
+*.pyc
+nginx.conf
