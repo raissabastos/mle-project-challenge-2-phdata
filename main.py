@@ -1,6 +1,3 @@
-"""
-Aplicação FastAPI para predição de preços de casas
-"""
 import traceback
 from fastapi import FastAPI, Request, status
 from fastapi.responses import JSONResponse
@@ -33,13 +30,13 @@ app.include_router(predict.router)
 
 @app.on_event("startup")
 def startup_event():
-    """Carrega artefatos na inicialização da aplicação"""
+    """Load artifacts in app inicialization."""
     load_artifacts()
 
 
 @app.exception_handler(ValidationError)
 async def validation_exception_handler(request: Request, exc: ValidationError):
-    """Handler para erros de validação"""
+    """Handler for validation errors"""
     logger.warning(f"Validation error: {exc}")
     return JSONResponse(
         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, 
@@ -49,7 +46,7 @@ async def validation_exception_handler(request: Request, exc: ValidationError):
 
 @app.exception_handler(Exception)
 async def general_exception_handler(request: Request, exc: Exception):
-    """Handler para erros gerais"""
+    """Handler for general errors"""
     logger.error(f"Unhandled exception: {exc}")
     traceback.print_exc()
     return JSONResponse(
