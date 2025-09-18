@@ -27,7 +27,7 @@ def load_artifacts():
     try:
         with open(MODEL_PATH, "rb") as f:
             model = pickle.load(f)
-        model_version = getattr(model, "random_state", "1.0.1") or getattr(model, "__class__", type(model)).__name__
+        model_version = getattr(model, "random_state", "1.0") or getattr(model, "__class__", type(model)).__name__
         logger.info(f"Loaded model from {MODEL_PATH} (version: {model_version})")
     except Exception as e:
         logger.error(f"Failed to load model: {e}")
