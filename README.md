@@ -107,7 +107,7 @@ Check if API and model are working fine.
 {
     "status": "ok",
     "model_loaded": true,
-    "model_version": "1.0.1"
+    "model_version": "1.0"
 }
 ```
 
@@ -120,7 +120,7 @@ Return detailed info about the loaded model.
 ```json
 {
     "model_loaded": true,
-    "model_version": "1.0.1",
+    "model_version": "1.0",
     "n_features": 33
 }
 ```
@@ -158,7 +158,7 @@ Predict price for one or more houses.
             "confidence": 0.85
         }
     ],
-    "model_version": "1.0.1",
+    "model_version": "1.0",
     "n_predictions": 1,
     "latency_seconds": 0.123,
     "request_id": "123e4567-e89b-12d3-a456-426614174000",
